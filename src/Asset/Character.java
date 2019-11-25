@@ -18,6 +18,7 @@ public class Character extends Entity{
     private int potion;
     
     private Weapon weapon;
+    private Helmet helmet;
     private Armor armor;
     private Glove glove;
     private Shoe shoe;
