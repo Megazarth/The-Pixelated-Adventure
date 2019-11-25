@@ -1,0 +1,16 @@
+PENTING! Agar tidak muncul error:
+
+Exception in thread "main" java.lang.UnsatisfiedLinkError: no lwjgl64 in java.library.path
+
+Diperlukan penambahan command
+
+Langkah:
+1. Click kanan Folder Project di dalam Netbeans -> Properties.
+2. Click bagian "Run"
+3. Di VM Options: tambahkan
+-Djava.library.path="{path ke folder RPG_GAME_MAKE}\RPG_GAME_MAKE\lib\native-win"  -Xms512m -XX:+UseConcMarkSweepGC
+
+Contoh:
+-Djava.library.path="C:\Users\ysuta\Desktop\UC\Coding\RPG_GAME\lib\native-win"  -Xms512m -XX:+UseConcMarkSweepGC
+
+Game ini belum pernah ditest pada platform Mac dan/atau Eclipse, hanya Netbeans saja. :)
