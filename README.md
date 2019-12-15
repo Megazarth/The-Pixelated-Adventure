@@ -9,4 +9,7 @@ Then after adding the project in Netbeans, do the following:
 1. Right-click the project folder in Netbeans -> Properties
 2. Click on "Run"
 3. In "VM Options" add:
-    -Djava.library.path="{path to the project folder}\RPG_GAME_MAKE\lib\native-win"  -Xms512m -XX:+UseConcMarkSweepGC
+    -Djava.library.path="{path to the project folder}\The-Pixelated-Adventure\lib\native-win"  -Xms512m -XX:+UseConcMarkSweepGC
+    
+    Example:
+    -Djava.library.path="C:\Users\ysuta\Desktop\UC\Coding\The-Pixelated-Adventure\lib\native-win"  -Xms512m -XX:+UseConcMarkSweepGC
