@@ -2,6 +2,8 @@ package helpers;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.Dictionary;
+import java.util.HashMap;
 import org.lwjgl.LWJGLException;
 import org.lwjgl.openal.AL;
 import org.lwjgl.opengl.Display;
@@ -16,7 +18,8 @@ public class Artist {
     //public int WIDTH = 1280, HEIGHT = 720;
     
     private static float alpha = 0;
-
+    private static HashMap<String , Texture> dictTextures =  new HashMap<>();
+    
     public static void BeginSession(String title, int WIDTH, int HEIGHT) {
         try {  
             Display.setDisplayMode(new DisplayMode(WIDTH, HEIGHT));
@@ -64,9 +67,15 @@ public class Artist {
     
     public static Texture LoadTexture(String path, String fileType) {
         Texture tex = null;
+        if (dictTextures.containsKey(path))
+        {
+            return dictTextures.get(path);
+        }
+        
         InputStream in =  ResourceLoader.getResourceAsStream(path);
         try {
             tex = TextureLoader.getTexture(fileType, in);
+            dictTextures.put(path, tex);
         } catch (IOException ex) {
             ex.printStackTrace();
         }
